@@ -1,0 +1,11 @@
+{
+  "comments": {
+    "prefix": "add coments",
+    "body": [
+      "/**",
+      " * $1",
+      " */"
+    ],
+    "description": "add comments to js"
+  }
+}
