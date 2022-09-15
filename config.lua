@@ -11,7 +11,7 @@ an executable
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save = false
-lvim.colorscheme = "gruvbox-material"
+lvim.colorscheme = "catppuccin"
 
 -- require extra files
 require "user.plugins"
@@ -20,6 +20,9 @@ require "user.keymaps"
 -- plugins config
 require "user.nvimtree"
 require "user.telescope"
+
+-- theme catppuccin colorscheme
+vim.g.catppuccin_flavour = "mocha"
 
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
