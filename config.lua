@@ -22,6 +22,7 @@ require "user.nvimtree"
 require "user.telescope"
 
 -- theme catppuccin colorscheme
+require "user.colorschemes.catppuccin"
 vim.g.catppuccin_flavour = "mocha"
 
 -- to disable icons and use a minimalist setup, uncomment the following

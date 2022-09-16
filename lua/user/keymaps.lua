@@ -14,12 +14,24 @@ lvim.builtin.which_key.mappings["r"] = {
   f = { "<cmd>lua require('spectre').open_file_search()<cr>", "Replace Buffer" },
 }
 
-lvim.keys.normal_mode["ma"] = "<cmd>BookmarkAnnotate<cr>"
-lvim.keys.normal_mode["mc"] = "<cmd>BookmarkClear<cr>"
-lvim.keys.normal_mode["mm"] = "<cmd>BookmarkToggle<cr>"
-lvim.keys.normal_mode["mh"] = "<cmd>lua require(\"harpoon.mark\").add_file()<cr>"
-lvim.keys.normal_mode["mj"] = "<cmd>BookmarkNext<cr>"
-lvim.keys.normal_mode["mk"] = "<cmd>BookmarkPrev<cr>"
-lvim.keys.normal_mode["ms"] = "<cmd>lua require('telescope').extensions.vim_bookmarks.all({ hide_filename=false, prompt_title=\"bookmarks\", shorten_path=false })<cr>"
-lvim.keys.normal_mode["mx"] = "<cmd>BookmarkClearAll<cr>"
-lvim.keys.normal_mode["mu"] = "<cmd>lua require(\"harpoon.ui\").toggle_quick_menu()<cr>"
+lvim.builtin.which_key.mappings["m"] = {
+  name = "Bookmarks",
+  a = { "<cmd>BookmarkAnnotate<cr>", "Annotate" },
+  c = { "<cmd>BookmarkClear<cr>", "Clear" },
+  h = { '<cmd>lua require("harpoon.mark").add_file()<cr>', "Harpoon Mark" },
+  u = { '<cmd>lua require("harpoon.ui").toggle_quick_menu()<cr>', "Harpoon Menu" },
+  m = { "<cmd>BookmarkToggle<cr>", "Toggle" },
+  j = { "<cmd>BookmarkNext<cr>", "Next" },
+  k = { "<cmd>BookmarkPrev<cr>", "Prev" },
+  s = { "<cmd>lua require('telescope').extensions.vim_bookmarks.all({ hide_filename=false, prompt_title=\"bookmarks\", shorten_path=false })<cr>", "Show All" },
+  x = { "<cmd>BookmarkClearAll<cr>", "Clear All" },
+}
+
+-- Telescope
+lvim.builtin.telescope.on_config_done = function()
+  local actions = require "telescope.actions"
+  lvim.builtin.telescope.defaults.mappings.i["<C-j>"] = actions.move_selection_next
+  lvim.builtin.telescope.defaults.mappings.i["<C-k>"] = actions.move_selection_previous
+  lvim.builtin.telescope.defaults.mappings.i["<C-n>"] = actions.cycle_history_next
+  lvim.builtin.telescope.defaults.mappings.i["<C-p>"] = actions.cycle_history_prev
+end

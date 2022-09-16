@@ -10,11 +10,7 @@ lvim.plugins = {
   { "frenzyexists/aquarium-vim" },
   { "EdenEast/nightfox.nvim" },
   { "rafamadriz/neon" },
-  { "catppuccin/nvim", as = "catppuccin",
-    config = function()
-      require("user.colorschemes.catppuccin").config()
-    end
-  },
+  { "catppuccin/nvim" },
   -- End color schemes
   { "shaunsingh/nord.nvim" },
   {
@@ -65,5 +61,9 @@ lvim.plugins = {
   },
   {
     'tom-anders/telescope-vim-bookmarks.nvim'
-  }
+  },
+  {
+    "sindrets/diffview.nvim",
+    event = "BufRead",
+  },
 }
