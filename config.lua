@@ -20,6 +20,7 @@ require "user.keymaps"
 -- plugins config
 require "user.nvimtree"
 require "user.telescope"
+require "user.toggleterm"
 
 -- theme catppuccin colorscheme
 require "user.colorschemes.catppuccin"
