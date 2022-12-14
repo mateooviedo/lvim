@@ -11,7 +11,7 @@ an executable
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save = false
-lvim.colorscheme = "catppuccin"
+lvim.colorscheme = "onenord"
 
 -- require extra files
 require "user.plugins"
