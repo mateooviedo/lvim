@@ -73,4 +73,26 @@ lvim.plugins = {
       require "user.todo-comments"
     end,
   },
+  -- NOTE: Neotest plugin
+  -- Requires
+  { "antoinemadec/FixCursorHold.nvim" },
+  -- Adapters
+  { "haydenmeade/neotest-jest" },
+  {
+    "nvim-neotest/neotest",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "antoinemadec/FixCursorHold.nvim",
+      "haydenmeade/neotest-jest",
+    },
+    config = function()
+      require "user.neotest"
+    end
+  },
+  { "vim-test/vim-test",
+    config = function ()
+      vim.g['test#javascript#runner'] = 'jest'
+    end
+  },
 }
